@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../images/logo.png";
 import { useNavigate } from "react-router-dom";
 
-export default function SignupDesign() {
+export default function LoginPage() {
   const navigate = useNavigate();
   return (
     <>
@@ -23,7 +23,7 @@ export default function SignupDesign() {
       >
         <div>
           <p className="text-[20px] text-[#F8FAF9] font-medium mb-8">
-            Enter email to sign up
+            Enter your email to login
           </p>
         </div>
 

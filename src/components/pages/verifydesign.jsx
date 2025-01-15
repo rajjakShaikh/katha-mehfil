@@ -22,7 +22,7 @@ export default function VerifyDesign() {
 
       <div
         id="customDropShadow"
-        className="flex flex-col rounded-[36px] items-center place-content-center justify-center w-fit mx-auto p-8"
+        className="flex flex-col rounded-[36px] items-center place-content-center justify-center w-fit mx-auto py-12 px-6"
       >
         {/* Logo */}
         <div className="mb-6">
@@ -31,7 +31,7 @@ export default function VerifyDesign() {
             alt="logo"
             height="60px"
             width="200px"
-            className="mx-auto py-6"
+            className="mx-auto"
           />
         </div>
 

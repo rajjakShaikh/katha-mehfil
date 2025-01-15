@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/logo.png";
 
 export default function SubcriptionDesign() {
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const plans = [
+    { value: "planA", label: "Plan A", price: "₹ 99", period: "Monthly" },
+    { value: "planB", label: "Plan B", price: "₹ 319", period: "Quarterly" },
+    { value: "planC", label: "Plan C", price: "₹ 529", period: "Half Yearly" },
+    { value: "planD", label: "Plan D", price: "₹ 1089", period: "Yearly" },
+  ];
+
+  const handlePlanSelect = (planValue) => {
+    setSelectedPlan(planValue === selectedPlan ? null : planValue);
+
+    switch (planValue) {
+      case "planA":
+        console.log("Selected Monthly Plan");
+        break;
+      case "planB":
+        console.log("Selected Quarterly Plan");
+        break;
+      case "planC":
+        console.log("Selected Half Yearly Plan");
+        break;
+      case "planD":
+        console.log("Selected Yearly Plan");
+        break;
+      default:
+        console.log("No plan selected");
+    }
+  };
+
   return (
     <>
       <div className="grid grid-cols-1">
@@ -32,109 +62,49 @@ export default function SubcriptionDesign() {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 ">
-          <div className="border rounded-[12px] p-4 font-normal text-[#94C11F] border-[#94C11F]">
-            <ul className="">
-              <li>Monthly</li>
-              <div className="flex justify-between">
-                <li className="font-semibold text-[24px]">₹ 99</li>
-                <li>
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    value=""
-                    className="w-5 h-5 border border-gray-300 rounded-2xl focus:ring-blue-300 bg-transparent dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                    required
-                  />
-                </li>
-              </div>
-              <li className=" text-[14px]">Cancel anytime</li>
-            </ul>
-          </div>
-          <div className="border rounded-[12px] p-4   font-normal text-white border-[#F8FAF9]">
-            <ul className="">
-              <li>Quarterly</li>
-              <div className="flex justify-between">
-                <li className="font-semibold text-[24px]">₹ 319</li>
-                <li>
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    value=""
-                    className="w-5 h-5  border border-gray-300 rounded-2xl focus:ring-blue-300 bg-transparent dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                    required
-                  />
-                </li>
-              </div>
-              <li className="text-[14px]">Cancel anytime</li>
-            </ul>
-          </div>
-          <div className="border rounded-[12px] p-4   font-normal text-white border-[#F8FAF9]">
-            <ul className="">
-              <li>Half Yearly</li>
-              <div className="flex justify-between ">
-                <li className="font-semibold text-[24px]">₹ 529</li>
-                <li>
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    value=""
-                    className="w-5 h-5  border border-gray-300 rounded-2xl focus:ring-blue-300 bg-transparent dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                    required
-                  />
-                </li>
-              </div>
-              <li className="text-[14px]">Cancel anytime</li>
-            </ul>
-          </div>
-          <div className="border rounded-[12px] p-4   font-normal text-white border-[#F8FAF9]">
-            <ul className="">
-              <li>Yearly</li>
-              <div className="flex justify-between ">
-                <li className="font-semibold text-[24px]">₹ 1089</li>
-                <li>
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    value=""
-                    className="w-5 h-5  border border-gray-300 rounded-2xl focus:ring-blue-300 bg-transparent dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                    required
-                  />
-                </li>
-              </div>
-              <li className="text-[14px]">Cancel anytime</li>
-            </ul>
-          </div>
+          {plans.map((plan) => (
+            <div
+              key={plan.value}
+              className={`border rounded-[12px] p-4 font-normal ${
+                plan.value === selectedPlan
+                  ? "text-[#94C11F] border-[#94C11F]"
+                  : "text-white border-[#F8FAF9]"
+              }`}
+            >
+              <ul>
+                <li>{plan.period}</li>
+                <div className="flex justify-between">
+                  <li className="font-semibold text-[24px]">{plan.price}</li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      value={plan.value}
+                      checked={selectedPlan === plan.value}
+                      className="w-5 h-5 border border-gray-300 rounded-2xl focus:ring-blue-300 bg-transparent dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                      onChange={() => handlePlanSelect(plan.value)}
+                    />
+                  </li>
+                </div>
+                <li className="text-[14px]">Cancel anytime</li>
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div>
-          <h2 className="text-[#F8FAF9] font-medium text-[20px]">
-            You will be billed after your free trial ends
-          </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div>
+            <h2 className="text-[#F8FAF9] text-[20px] font-medium">
+              You will be billed after your free trial ends
+            </h2>
+          </div>
+          <div className="grid justify-end">
+            <button className="py-3 text-[16px] font-semibold px-4 text-[#94C11F] border-2 rounded-[12px] border-[#94C11F]">
+              Next
+            </button>
+          </div>
         </div>
-
-        {/* Email label and input */}
-        {/* <div className="w-[516px] text-start">
-          <label
-            htmlFor="email"
-            className="block text-[16px] text-[#F8FAF9] font-medium text-lg mb-2"
-          >
-            Enter OTP to verify email:
-          </label>
-          <input
-            type="password"
-            placeholder="Please enter your password"
-            name="password"
-            id="email"
-            className="w-full font-normal text-[16px] rounded-[12px] text-[#F8FAF9] px-4 py-2 border bg-transparent border-gray-300  focus:outline-none focus:ring-2 focus:ring-[#94C11F] focus:border-transparent"
-          />
-        </div> */}
 
         {/* Submit button */}
-        <div className="w-full mt-12 ">
-          <button className="w-full py-3 font-semibold px-4 text-[#94C11F] border-2 rounded-[12px] border-[#94C11F]">
-            Next
-          </button>
-        </div>
       </div>
     </>
   );

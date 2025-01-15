@@ -107,7 +107,7 @@ function Dashboard() {
               className="py-3 px-4 text-[#94C11F] font-semibold text-[16px] border-2 rounded-[12px] my-12 border-[#94C11F]"
               onClick={() => navigate("/signup")}
             >
-              Start Your Free Trial
+              Start Your 7 Day Free Trial
             </button>
           </div>
         </div>
@@ -459,7 +459,7 @@ function Dashboard() {
             alt="logo"
             height="60px"
             width="200px"
-            className="mx-12 py-6"
+            className="mx-12 py-6 md:ml-[48px] ml-[83px]"
           />
         </div>
 
@@ -469,7 +469,7 @@ function Dashboard() {
             © 2024 Katha Mehfil
           </h2>
         </div>
-        <div className="grid justify-center sm:justify-end">
+        <div className="grid rounded-[24px] justify-center sm:justify-end">
           <ul className="text-[#F8FAF9] text-left px-12 text-[16px] font-semibold">
             <li>Privacy Policy</li>
             <li>Terms of Services</li>

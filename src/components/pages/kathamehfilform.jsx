@@ -5,7 +5,7 @@ export default function KathaMehfilForm() {
   return (
     <>
       <div className="grid grid-cols-1">
-        <div className="flex justify-start space-x-4 m-12">
+        <div className="flex justify-start space-x-4 m-4 md:m-12">
           <button className="py-3 text-[16px] font-semibold px-4 text-[#94C11F] border-2 rounded-[12px] border-[#94C11F]">
             Go back
           </button>
@@ -13,7 +13,7 @@ export default function KathaMehfilForm() {
       </div>
 
       <div className="max-w-4xl mx-auto mb-12">
-        <form id="customDropShadow" className="mx-12 rounded-[36px]">
+        <form id="customDropShadow" className="mx-4 md:mx-12 rounded-[36px]">
           <div className="rounded-[36px] ">
             <div className="mb-6 rounded-[36px]">
               <img
