@@ -14,7 +14,7 @@ export default function SubcriptionDesign() {
 
       <div
         id="customDropShadow"
-        className="flex mb-8  flex-col rounded-[36px] items-center place-content-center justify-center w-fit mx-5 md:mx-auto p-8"
+        className="flex mb-8 flex-col rounded-[36px] mx-5 md:mx-12 p-8"
       >
         {/* Logo */}
         <div className="mb-6">
@@ -31,12 +31,12 @@ export default function SubcriptionDesign() {
             Choose the plan, that is right for you
           </h2>
         </div>
-        <div className="flex gap-8 py-12 ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12 ">
           <div className="border rounded-[12px] p-4 font-normal text-[#94C11F] border-[#94C11F]">
             <ul className="">
               <li>Monthly</li>
               <div className="flex justify-between">
-                <li className="font-semibold">₹99</li>
+                <li className="font-semibold text-[24px]">₹ 99</li>
                 <li>
                   <input
                     id="remember"
@@ -50,11 +50,47 @@ export default function SubcriptionDesign() {
               <li className=" text-[14px]">Cancel anytime</li>
             </ul>
           </div>
-          <div className="border rounded-[12px] p-4  font-normal text-white border-[#F8FAF9]">
+          <div className="border rounded-[12px] p-4   font-normal text-white border-[#F8FAF9]">
+            <ul className="">
+              <li>Quarterly</li>
+              <div className="flex justify-between">
+                <li className="font-semibold text-[24px]">₹ 319</li>
+                <li>
+                  <input
+                    id="remember"
+                    type="checkbox"
+                    value=""
+                    className="w-5 h-5  border border-gray-300 rounded-2xl focus:ring-blue-300 bg-transparent dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                    required
+                  />
+                </li>
+              </div>
+              <li className="text-[14px]">Cancel anytime</li>
+            </ul>
+          </div>
+          <div className="border rounded-[12px] p-4   font-normal text-white border-[#F8FAF9]">
+            <ul className="">
+              <li>Half Yearly</li>
+              <div className="flex justify-between ">
+                <li className="font-semibold text-[24px]">₹ 529</li>
+                <li>
+                  <input
+                    id="remember"
+                    type="checkbox"
+                    value=""
+                    className="w-5 h-5  border border-gray-300 rounded-2xl focus:ring-blue-300 bg-transparent dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                    required
+                  />
+                </li>
+              </div>
+              <li className="text-[14px]">Cancel anytime</li>
+            </ul>
+          </div>
+          <div className="border rounded-[12px] p-4   font-normal text-white border-[#F8FAF9]">
             <ul className="">
               <li>Yearly</li>
-              <div className="flex justify-between">
-                <li className="font-semibold">₹1,100</li>
+              <div className="flex justify-between ">
+                <li className="font-semibold text-[24px]">₹ 1089</li>
                 <li>
                   <input
                     id="remember"
@@ -69,6 +105,7 @@ export default function SubcriptionDesign() {
             </ul>
           </div>
         </div>
+
         <div>
           <h2 className="text-[#F8FAF9] font-medium text-[20px]">
             You will be billed after your free trial ends
